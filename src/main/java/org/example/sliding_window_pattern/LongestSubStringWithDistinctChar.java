@@ -6,8 +6,8 @@ public class LongestSubStringWithDistinctChar {
     public static void main(String[] args) {
 
         String str = "AdBBllock";
-//        System.out.println(subStringWithDistinctChar(str));
-//        System.out.println(subStringWithDistinctCharWithSize(str,5));
+        System.out.println(subStringWithDistinctChar(str));
+        System.out.println(subStringWithDistinctCharWithSize(str,5));
         System.out.println(subStringWithDistinctChar2(str));
 
     }

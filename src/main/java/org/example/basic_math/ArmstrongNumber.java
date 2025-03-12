@@ -26,7 +26,6 @@ public class ArmstrongNumber {
             finalSum += sum;
         }
         System.out.println(finalSum);
-
         return finalSum == actualNum;
     }
 }

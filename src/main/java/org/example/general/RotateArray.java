@@ -4,7 +4,11 @@ import java.util.*;
 
 public class RotateArray {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int[] arr = {1, 2, 3, 4, 5,6,7};
+
+        rotateArrayRecursion(arr,0);
+        System.out.println("Rotated Array: "+ Arrays.toString(arr));
+
 
 
         List<Integer> integerList = new ArrayList<>();
@@ -18,8 +22,8 @@ public class RotateArray {
 
 //        System.out.println(rotateArrayByDegree((ArrayList<Integer>) integerList,6));
 
-        System.out.println("Actual Array: " + Arrays.toString(arr));
-        reverse(arr, 4);
+//        System.out.println("Actual Array: "+ Arrays.toString(arr));
+//        reverse(arr,4);
 
 
 //        rotateArrayByDegree(arr,2);
@@ -28,18 +32,18 @@ public class RotateArray {
 
     }
 
-    public static ArrayList<Integer> rotateArrayByDegree(ArrayList<Integer> arrayList, int degree) {
-        int swap = 0;
-        for (int i = 0; i < degree; i++) {
+    public static ArrayList<Integer> rotateArrayByDegree(ArrayList<Integer> arrayList, int degree){
+        int swap =0;
+        for(int i = 0;i<degree;i++){
             swap = arrayList.get(0);
             arrayList.remove(0);
             arrayList.add(swap);
         }
-        return arrayList;
+        return  arrayList;
     }
 
-    public static void rotateArray(int[] arr, int start, int end) {
-        while (start < end) {
+    public static void rotateArray(int[] arr, int start, int end){
+        while(start < end){
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
@@ -47,8 +51,7 @@ public class RotateArray {
             end--;
         }
     }
-
-    public static void reverse(int[] arr, int degree) {
+    public  static  void reverse(int[] arr, int degree) {
         degree = degree % arr.length;
         System.out.println("degree: " + degree);
         if (degree < 0) {
@@ -68,10 +71,10 @@ public class RotateArray {
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void rotateArrayByDegree(int[] arr, int degree) {
-        int start = 0;
+    public static void rotateArrayByDegree(int[] arr, int degree){
+        int start = 0 ;
         int end = arr.length - 1;
-        for (int i = 0; i < degree; i++) {
+        for(int i = 0;i<degree;i++){
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
@@ -80,4 +83,18 @@ public class RotateArray {
         }
     }
 
+
+    public static  void rotateArrayRecursion(int[]arr, int i){
+        int n = arr.length;
+        if(i >= n/2) return;
+        swap(arr,i,n-i-1);
+        rotateArrayRecursion(arr,i+1);
+    }
+
+    private static void swap(int[] arr,int left, int right) {
+        int swap = 0;
+        swap = arr[right];
+        arr[right] = arr[left];
+        arr[left] = swap;
+    }
 }

@@ -9,7 +9,7 @@ public class BubbleSort {
         System.out.print("Array : ");
         System.out.println(Arrays.toString(arr));
 
-        bubbleSort(arr);
+        bubbleSort2(arr);
 
         System.out.print("Array after sorting: ");
         System.out.println(Arrays.toString(arr));
@@ -23,6 +23,19 @@ public class BubbleSort {
 
                 if (arr[i] > arr[j]) {
                     swapValuesInArray(arr,i,j);
+                }
+            }
+        }
+    }
+
+    private static void bubbleSort2(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            for (int j = 0; j < arr.length - i - 1; j++) {
+
+                if (arr[j] > arr[j+1]) {
+                    swapValuesInArray(arr,j,j+1);
                 }
             }
         }

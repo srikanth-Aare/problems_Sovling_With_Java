@@ -32,30 +32,27 @@ public class SortedArray {
     }
 
     private static boolean isArraySorted(int[]arr){
-        int count = arr.length-1;
         for (int i = 0; i < arr.length-1; i++) {
             if(arr[i] < arr[i+1]){
-                count --;
             }
+            else return false;
         }
-        return count == 0;
+        return true;
     }
 
     private static boolean isArraySorted2(int[]arr){
-        int count = 0;
         for (int i = 0; i < arr.length-1; i++) {
             if(arr[i] > arr[i+1]){
-                count ++;
             }
+            else return false;
         }
-        return count == arr.length-1;
+        return true;
     }
 
     private static boolean isArraySortedUsingStreams(int[]numbers){
         // Check if the array is sorted in ascending order
         boolean isSorted = IntStream.range(0, numbers.length - 1)
                 .allMatch(i -> numbers[i] <= numbers[i + 1]);
-
         return isSorted;
     }
 }

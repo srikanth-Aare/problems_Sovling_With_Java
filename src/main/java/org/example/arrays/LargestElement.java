@@ -9,12 +9,13 @@ public class LargestElement {
         System.out.print("Largest Element is:"+findLargestNumber(arr) + " In Array");
 
         System.out.println();
-        System.out.print("2nd Largest Element is:"+find2NdLargestNumber(arr) + " In Array");
+        System.out.print("2nd Largest Element is:"+find2NdLargestNumber2(arr) + " In Array");
 
         System.out.println();
         System.out.print("2nd Largest Element is:"+find2NdLargestNumberUsingStreams(arr) + " In Array");
     }
 
+    // TC is O(n)
     private static int findLargestNumber(int[] arr){
         int max = Integer.MIN_VALUE;
         for (int j : arr) {
@@ -25,6 +26,8 @@ public class LargestElement {
         return max;
     }
 
+    // Better Solution
+    // TC is O(2n)
     private static int find2NdLargestNumber(int[] arr){
         int max = Integer.MIN_VALUE;
         int secondMax =  Integer.MIN_VALUE;
@@ -41,6 +44,7 @@ public class LargestElement {
         return secondMax;
     }
 
+    // if max value duplicated below approach will not work
     private static OptionalInt find2NdLargestNumberUsingStreams(int[] arr) {
         OptionalInt secondLargest = Arrays.stream(arr)
                 .distinct()                  // Remove duplicates
@@ -51,5 +55,22 @@ public class LargestElement {
 //        // Display the result
 //        secondLargest.ifPresent(System.out::println);
         return secondLargest;
+    }
+
+    // Optimal Solution
+    // TC is O(n)
+    private static int find2NdLargestNumber2(int[] arr){
+        int max = arr[0];
+        int secondMax =  Integer.MIN_VALUE;
+        for (int j : arr) {
+            if (j > max) {
+                secondMax = max;
+                max = j;
+            }
+            else if(j > secondMax && j < max){
+                secondMax = j;
+            }
+        }
+        return secondMax;
     }
 }

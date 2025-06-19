@@ -3,19 +3,19 @@ package org.example.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class InterSectionElementsOfArray {
+public class IntersectionElementsInSortedArray {
     public static void main(String[] args) {
         int[] arr1 ={1,2,3,3,4,4,5,6,8,8,9};
         int[] arr2 = {1,3,3,4,5,6,7,7,9};
 
-        System.out.println(findInterSection2(arr1,arr2));
+        System.out.println(findIntersectionElements2(arr1,arr2));
 
     }
 
     //BrutForce Solution
     //Time complexity: O(n1*n2)
     //Space Complexity: O(n2)
-    private static ArrayList<Integer> findInterSection(int[]arr1, int[]arr2){
+    private static ArrayList<Integer> findIntersectionElements(int[]arr1, int[]arr2){
         ArrayList<Integer> interSectionArray = new ArrayList<>();
         int[] visitedArray = new int[arr2.length];
 
@@ -35,7 +35,7 @@ public class InterSectionElementsOfArray {
     // Optimal Solution
     //Time complexity: O(n1+n2)
     //Space Complexity: O(1)
-    private static ArrayList<Integer> findInterSection2(int[]arr1, int[]arr2){
+    private static ArrayList<Integer> findIntersectionElements2(int[]arr1, int[]arr2){
         ArrayList<Integer> interSectionArray = new ArrayList<>();
         int i = 0 ,j = 0;
         while (i < arr1.length && j < arr2.length ){

@@ -1,4 +1,4 @@
-package org.example.arrays;
+package org.example.arrays.medium;
 
 public class FindDistinctNumber {
     public static void main(String[] args) {

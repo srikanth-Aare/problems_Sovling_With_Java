@@ -1,4 +1,4 @@
-package org.example.arrays;
+package org.example.arrays.easy;
 
 public class LinearSearch {
     public static void main(String[] args) {

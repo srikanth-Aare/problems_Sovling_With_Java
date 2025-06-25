@@ -1,4 +1,4 @@
-package org.example.arrays;
+package org.example.arrays.easy;
 
 public class MaximumConsecutiveCount {
     public static void main(String[] args) {

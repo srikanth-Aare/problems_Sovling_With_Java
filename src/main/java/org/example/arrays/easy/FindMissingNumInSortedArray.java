@@ -2,8 +2,10 @@ package org.example.arrays.easy;
 
 public class FindMissingNumInSortedArray {
     public static void main(String[] args) {
-        int[] arr1 = {1,2,3,5};
+        int[] arr1 = {1,2,3,4,6};
         System.out.println(findMissingNumber2(arr1,arr1.length));
+
+
     }
 
     //Brute Force Approach
@@ -21,6 +23,15 @@ public class FindMissingNumInSortedArray {
             if (flag == 0) return i;
         }
         // It is just to avoid warnings.
+        return -1;
+    }
+
+    public static int findMissingNum(int []arr1) {
+        for (int i = 1; i <= arr1.length-2; i++) {
+            if(arr1[i]+1 != arr1[i+1]){
+               return arr1[i]+1;
+            }
+        }
         return -1;
     }
 
